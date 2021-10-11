@@ -1,19 +1,19 @@
-# users-db-vue3
+# crud-table-vue3
 
-## Project setup
+### Установка зависимостей
 ```
 yarn install
 ```
-
-### Compiles and hot-reloads for development
+### Запуск клиента
 ```
-yarn serve
+yarn dev
 ```
-
-### Compiles and minifies for production
+### Запуск сервера json-sever
 ```
-yarn build
+yarn server
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Требует доработки
+1. Сортировка работает только в одну сторону 
+2. При применении сортировки перестает работать пагинация 
+3. Вероятно выбрал неудачный вариант реализации таблицы, не успел ее кастомизировать
+4. Не успел добавить проксирование json-sever
