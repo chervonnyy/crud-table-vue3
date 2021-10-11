@@ -1,13 +1,13 @@
 <template>
-	<div class="row">
-		<div class="cell" v-for="cell in data" :key="cell">
+	<tr>
+		<td class="cell" v-for="cell in data" :key="cell">
 			{{ cell }}
-		</div>
-		<div class="actions">
+		</td>
+		<td class="cell actions">
 			<button @click="$emit('edit', data.id)">✏️</button>
 			<button @click="store.methods.delete(storeName, data.id)">🗑️</button>
-		</div>
-	</div>
+		</td>
+	</tr>
 </template>
 
 <script lang="ts">

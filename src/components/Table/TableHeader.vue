@@ -1,11 +1,11 @@
 <template>
-	<div class="header row">
-		<div
+	<tr class="header">
+		<td
 			v-for="column in columns" 
 			:key="column.id"
 			class="cell"
 		>
-			{{ column.label }} 
+			{{ column.label }}
 			<span 
 				v-if="column.sortable"
 				class="sort"
@@ -22,8 +22,8 @@
 					order: 'asc'
 				})"
 			>⬆️</span>
-		</div>
-	</div>
+		</td>
+	</tr>
 </template>
 
 <script lang="ts">

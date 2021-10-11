@@ -1,10 +1,10 @@
 <template>
-	<div class="table">
-		<div class="control">
-			<button @click="openDialog">
-				{{ controlText || 'Добавить' }}
-			</button>
-		</div>
+	<div class="control">
+		<button @click="openDialog">
+			{{ controlText || 'Добавить' }}
+		</button>
+	</div>
+	<table class="table">
 		<TableHeader
 			:storeName="storeName"
 			:columns="columns"
@@ -16,15 +16,15 @@
 			:storeName="storeName"
 			@edit="handleEdit"
 		/>
-		<div class="pagination">
-			<button @click="store.methods.decreasePage(storeName)">
-				предыдущая старнциа
-			</button>
-			<button @click="store.methods.increasePage(storeName)">
-				следующая страница
-			</button>
+	</table>
+	<div class="pagination">
+		<button @click="store.methods.decreasePage(storeName)">
+			предыдущая старнциа
+		</button>
+		<button @click="store.methods.increasePage(storeName)">
+			следующая страница
+		</button>
 		</div>
-	</div>
 	<Popup 
 		v-if="dialogIsVisible"
 		@close="closePopup"
@@ -93,28 +93,20 @@ export default defineComponent({
 </script>
 
 <style>
+.table {
+	width: 100%;
+}
 .header {
 	background: lightskyblue;
 	color: #fff;
-}
-.row {
-	display: grid;
-	grid-auto-flow: column;
-	border: 1px solid grey;
-	border-top: none
-}
-.row:first-child {
-	border-top: 1px solid grey;
+	font-weight: bold;
 }
 .cell {
-	padding: 5px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	white-space: nowrap;
 }
 .sort {
 	cursor: pointer;
-	margin-left: 5px;
+	margin-left: 2px;
 }
 .actions {
 	display: flex;
